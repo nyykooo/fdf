@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/04 09:59:57 by ncampbel          #+#    #+#              #
-#    Updated: 2024/02/17 18:33:59 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/02/20 16:05:49 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ CFLAGS = -Wall -Wextra -Werror -g
 SRC = fdf.c
 OBJ = $(SRC:.c=.o)
 GNL = libs/get_next_line/get_next_line.a
-MLX = libs/mlx-linux/libmlx.a
+MLX = libs/mlx-linux/libmlx.a -lm -lz -lXext -lX11
 LIBFT = libs/libft/libft.a
 
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJ) $(MLX) $(GNL)
-	$(CC) $(CFLAGS) $(OBJ) -L$(LIBFT) -L$(GNL) -L$(MLX) -lXext -lX11 -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(GNL) $(MLX) -o $(NAME)
 
 $(LIBFT):
 	make -C libs/libft

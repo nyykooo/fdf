@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 16:55:04 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/02/17 18:15:33 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:12:38 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int ac, char **av)
 			return 0;
 		env->mlx = mlx_init();
 		env->win = mlx_new_window(env->mlx, 1920, 1080, av[1]);
+		mlx_loop(env->mlx);
 	}
 	return 1;
 }
