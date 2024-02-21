@@ -6,14 +6,15 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/04 09:59:57 by ncampbel          #+#    #+#              #
-#    Updated: 2024/02/20 16:05:49 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/02/21 16:34:00 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
-SRC = fdf.c
+SRC = fdf.c \
+		sources/map_keys.c
 OBJ = $(SRC:.c=.o)
 GNL = libs/get_next_line/get_next_line.a
 MLX = libs/mlx-linux/libmlx.a -lm -lz -lXext -lX11
